@@ -1,7 +1,7 @@
 {
   "name": "kube-scrambler",
   "version": "1.0.0",
-  "description": "Fast and complete 3x3 Rubik's cube scrambler ",
+  "description": "Fast and complete 3x3 Rubik's cube scrambler",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {

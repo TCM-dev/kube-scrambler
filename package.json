@@ -1,7 +1,7 @@
 {
   "name": "kube-skrambler",
   "version": "1.0.0",
-  "description": "Fast and complete 3x3 Rubik's cube scrambler",
+  "description": "Fast and complete 3x3 Rubik's cube scramble generator",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TCM-dev/kube-scrambler.git"
+    "url": "git+https://github.com/TCM-dev/kube-skrambler.git"
   },
   "keywords": [
     "Speedcubing",
@@ -26,9 +26,9 @@
   "author": "Valentin W",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/TCM-dev/kube-scrambler/issues"
+    "url": "https://github.com/TCM-dev/kube-skrambler/issues"
   },
-  "homepage": "https://github.com/TCM-dev/kube-scrambler#readme",
+  "homepage": "https://github.com/TCM-dev/kube-skrambler#readme",
   "devDependencies": {
     "prettier": "^2.3.2",
     "tslint": "^6.1.3",

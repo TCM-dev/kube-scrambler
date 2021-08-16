@@ -1,9 +1,25 @@
-class scrambler {
-  constructor() {}
+import { ScrambleCategory } from './types';
+import { scramblerWCA } from './utils/scramblerWCA';
 
-  public get(): string {
-    return '';
+type getOptions = {
+  category: ScrambleCategory;
+};
+
+const get = (options: getOptions = { category: 'WCA' }): string => {
+  switch (options.category) {
+    case 'ZBLL':
+      break;
+
+    case 'WCA':
+    default:
+      return scramblerWCA();
   }
-}
 
-export default scrambler;
+  return '';
+};
+
+const skrambler = {
+  get,
+};
+
+export default skrambler;

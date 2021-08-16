@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --config jestconfig.json",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
@@ -30,12 +30,18 @@
   },
   "homepage": "https://github.com/TCM-dev/kube-skrambler#readme",
   "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "jest": "^27.0.6",
     "prettier": "^2.3.2",
+    "ts-jest": "^27.0.4",
     "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^4.3.5"
   },
   "files": [
     "lib/**/*"
-  ]
+  ],
+  "dependencies": {
+    "mathlib": "^0.7.3"
+  }
 }

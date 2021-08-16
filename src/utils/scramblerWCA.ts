@@ -8,7 +8,7 @@ export const scramblerWCA = () => {
   const moves: Move[] = ['U', 'F', 'R', 'B', 'L', 'D'];
   const variations: Variation[] = ['', '2', "'"];
   const scrambleArray = [];
-  let lastMove: Move | undefined = undefined;
+  let lastMove: Move | null = null;
 
   for (let index = 0; index < length; index++) {
     const availableMoves = moves.filter((move) => move !== lastMove);

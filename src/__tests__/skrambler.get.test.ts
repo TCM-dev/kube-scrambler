@@ -1,4 +1,6 @@
 import skrambler from '../index';
+import ZBLL from '../scrambles/ZBLL';
+import { reverseScramble } from '../utils/helpers';
 describe('default behaviors check', () => {
   test('get method returns a string', () => {
     expect(typeof skrambler.get()).toBe('string');
@@ -14,5 +16,23 @@ describe('default behaviors check', () => {
     });
 
     expect(hasImmediateDuplications).toBe(false);
+  });
+});
+
+describe('ZBLL options check', () => {
+  test('get method ZBLL option works', () => {
+    expect(typeof skrambler.get({ category: 'ZBLL' })).toBe('string');
+  });
+
+  test('get method ZBLL option does return a ZBLL', () => {
+    const value = skrambler.get({ category: 'ZBLL' });
+
+    const originalValue = reverseScramble(value);
+
+    const isZBLL = ZBLL.some((alg) => {
+      return alg.values.some((value) => value.endsWith(originalValue));
+    });
+
+    expect(isZBLL).toBe(true);
   });
 });

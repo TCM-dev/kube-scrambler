@@ -1,5 +1,6 @@
 export type ScrambleCategory = 'WCA' | 'PLL' | 'OLL' | 'ZBLL';
-export type Scramble = {
+export type Alg = {
+  values: string[];
   family: string;
-  value: string;
 };
+export type Variation = '' | '2' | "'";

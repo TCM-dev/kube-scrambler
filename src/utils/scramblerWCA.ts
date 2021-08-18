@@ -1,9 +1,9 @@
+import { Variation } from '../types';
 import { randomIntFromInterval } from './helpers';
 
 type Move = 'U' | 'F' | 'R' | 'B' | 'L' | 'D';
-type Variation = '' | '2' | "'";
 
-export const scramblerWCA = () => {
+export const scramblerWCA = (): string => {
   const length = 20;
   const moves: Move[] = ['U', 'F', 'R', 'B', 'L', 'D'];
   const variations: Variation[] = ['', '2', "'"];

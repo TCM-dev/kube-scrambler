@@ -1,6 +1,6 @@
 {
   "name": "kube-skrambler",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Fast and complete 3x3 Rubik's cube scramble generator",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

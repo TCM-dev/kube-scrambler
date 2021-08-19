@@ -33,6 +33,11 @@ describe('ZBLL options check', () => {
       return alg.values.some((value) => value.endsWith(originalValue));
     });
 
+    if (!isZBLL) {
+      console.log(value);
+      console.log(originalValue);
+    }
+
     expect(isZBLL).toBe(true);
   });
 });

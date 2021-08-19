@@ -11,7 +11,7 @@ export const reverseScramble = (scramble: string): string => {
   const scrambleArray = scramble.split(' ');
 
   // Inverse move notation
-  scrambleArray.map((move) => {
+  const reversedScrambleArray = scrambleArray.map((move) => {
     if (move.endsWith("'")) {
       return move.slice(0, -1);
     }
@@ -23,5 +23,5 @@ export const reverseScramble = (scramble: string): string => {
     return move;
   });
 
-  return scrambleArray.reverse().join(' ');
+  return reversedScrambleArray.reverse().join(' ');
 };

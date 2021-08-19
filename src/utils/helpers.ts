@@ -11,17 +11,32 @@ export const reverseScramble = (scramble: string): string => {
   const scrambleArray = scramble.split(' ');
 
   // Inverse move notation
-  const reversedScrambleArray = scrambleArray.map((move) => {
+  const inversedScrambleArray = scrambleArray.map((move) => {
     if (move.endsWith("'")) {
       return move.slice(0, -1);
     }
 
-    if (!move.endsWith('2')) {
-      return move + "'";
+    return move + "'";
+  });
+
+  return inversedScrambleArray.reverse().join(' ');
+};
+
+export const simplifyScramble = (scramble: string): string => {
+  const scrambleArray = scramble.split(' ');
+
+  // Simplify move notation
+  const simplifiedScramble = scrambleArray.map((move) => {
+    if (move.startsWith('[')) {
+      return;
+    }
+
+    if (move.endsWith("2'")) {
+      return move.slice(0, -1);
     }
 
     return move;
   });
 
-  return reversedScrambleArray.reverse().join(' ');
+  return simplifiedScramble.filter((e) => e).join(' ');
 };

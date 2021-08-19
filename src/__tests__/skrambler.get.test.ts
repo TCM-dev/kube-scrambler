@@ -1,6 +1,6 @@
 import skrambler from '../index';
 import ZBLL from '../scrambles/ZBLL';
-import { reverseScramble } from '../utils/helpers';
+import { reverseScramble, simplifyScramble } from '../utils/helpers';
 describe('default behaviors check', () => {
   test('get method returns a string', () => {
     expect(typeof skrambler.get()).toBe('string');
@@ -25,18 +25,11 @@ describe('ZBLL options check', () => {
   });
 
   test('get method ZBLL option does return a ZBLL', () => {
-    const value = skrambler.get({ category: 'ZBLL' });
-
-    const originalValue = reverseScramble(value);
+    const zbll = skrambler.get({ category: 'ZBLL' });
 
     const isZBLL = ZBLL.some((alg) => {
-      return alg.values.some((value) => value.endsWith(originalValue));
+      return alg.values.some((value) => simplifyScramble(reverseScramble(value)) === zbll);
     });
-
-    if (!isZBLL) {
-      console.log(value);
-      console.log(originalValue);
-    }
 
     expect(isZBLL).toBe(true);
   });

@@ -1,4 +1,4 @@
-import { randomFromArray, randomIntFromInterval, reverseScramble } from '../utils/helpers';
+import { randomFromArray, randomIntFromInterval, reverseScramble, simplifyScramble } from '../utils/helpers';
 
 describe('random helpers check', () => {
   beforeEach(() => {
@@ -24,6 +24,11 @@ describe('random helpers check', () => {
 });
 
 describe('scrambler helpers check', () => {
+  test('simplifyScramble does simplify the scramble', () => {
+    const scramble = "[U] R2'";
+    expect(simplifyScramble(scramble)).toBe('R2');
+  });
+
   test('reverseScramble does reverse the scramble', () => {
     const scramble = 'U F';
     expect(reverseScramble(scramble)).toBe("F' U'");

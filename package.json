@@ -40,8 +40,5 @@
   },
   "files": [
     "lib/**/*"
-  ],
-  "dependencies": {
-    "mathlib": "^0.7.3"
-  }
+  ]
 }

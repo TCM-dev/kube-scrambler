@@ -1,4 +1,4 @@
-import ZBLL from '../scrambles/ZBLL';
+import ZBLL from '../algorithms/ZBLL';
 import { randomFromArray, reverseScramble, simplifyScramble } from './helpers';
 
 export const scramblerZBLL = (): string => {

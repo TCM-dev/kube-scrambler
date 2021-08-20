@@ -1,5 +1,5 @@
 import skrambler from '../index';
-import ZBLL from '../scrambles/ZBLL';
+import ZBLL from '../algorithms/ZBLL';
 import { reverseScramble, simplifyScramble } from '../utils/helpers';
 describe('default behaviors check', () => {
   test('get method returns a string', () => {

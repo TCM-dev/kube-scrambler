@@ -1,4 +1,11 @@
-import { randomFromArray, randomIntFromInterval, reverseScramble, simplifyScramble } from '../utils/helpers';
+import {
+  decorateScramble,
+  randomFromArray,
+  randomIntFromInterval,
+  reverseScramble,
+  rotateScramble,
+  simplifyScramble,
+} from '../utils/helpers';
 
 describe('random helpers check', () => {
   beforeEach(() => {
@@ -32,5 +39,17 @@ describe('scrambler helpers check', () => {
   test('reverseScramble does reverse the scramble', () => {
     const scramble = 'U F';
     expect(reverseScramble(scramble)).toBe("F' U'");
+  });
+
+  test('rotateScramble does rotate the scramble', () => {
+    const scramble = "U2 F'";
+    expect(rotateScramble(scramble, 'y', 2)).toBe("U2 B'");
+  });
+
+  test('decorateScramble does decorate the scramble', () => {
+    jest.spyOn(global.Math, 'random').mockReturnValue(0.5);
+    const scramble = "U2 F'";
+    expect(decorateScramble(scramble)).toBe("D2 B'");
+    jest.spyOn(global.Math, 'random').mockRestore();
   });
 });

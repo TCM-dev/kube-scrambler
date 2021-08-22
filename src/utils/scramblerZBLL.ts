@@ -1,10 +1,10 @@
 import ZBLL from '../algorithms/ZBLL';
-import { randomFromArray, reverseScramble, simplifyScramble } from './helpers';
+import { decorateScramble, randomFromArray } from './helpers';
 
 export const scramblerZBLL = (): string => {
   const alg = randomFromArray(ZBLL);
 
   const value = randomFromArray(alg.values);
 
-  return simplifyScramble(reverseScramble(value));
+  return decorateScramble(value, "y");
 };

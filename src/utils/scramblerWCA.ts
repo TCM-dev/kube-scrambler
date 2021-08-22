@@ -1,7 +1,5 @@
-import { Variation } from '../types';
+import { Move, Variation } from '../types';
 import { randomIntFromInterval } from './helpers';
-
-type Move = 'U' | 'F' | 'R' | 'B' | 'L' | 'D';
 
 export const scramblerWCA = (): string => {
   const length = 20;

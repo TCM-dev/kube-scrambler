@@ -11,6 +11,8 @@ a specific ZBLL with a given family, corner permutation and end rotation.
 
 ## Usage
 
+### WCA
+
 ```
 import skrambler from "kube-skrambler";
 
@@ -23,3 +25,21 @@ console.log(scramble)
 
 Note: I am not 100% sure those scrambles are totally WCA legit for now, existing scripts on the web are written by people who like to makes things unreadable,
 and I may or may not have taken every "rules" into account right now (in order to have a random state and not random moves scramble), scrambles are still solid for now though.
+
+### ZBLL
+
+```
+import skrambler from "kube-skrambler";
+
+// Returns a random ZBLL scramble
+const scramble = skrambler.get({ category: 'ZBLL' }))
+
+// B2 D' R2 D' L' U L' U2 F2 L' D' L' D' R2
+console.log(scramble)
+```
+
+Note: Right now only U ZBLL are available, more coming later
+
+### Options
+
+More options are coming later, allowing to select specific cases, specific rotations etc.

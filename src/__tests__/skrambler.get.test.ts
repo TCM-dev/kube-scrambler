@@ -1,6 +1,6 @@
 import skrambler from '../index';
 import ZBLL from '../algorithms/ZBLL';
-import { reverseScramble, simplifyScramble } from '../utils/helpers';
+import { reverseScramble, rotateScramble, simplifyScramble } from '../utils/helpers';
 describe('default behaviors check', () => {
   test('get method returns a string', () => {
     expect(typeof skrambler.get()).toBe('string');
@@ -28,7 +28,17 @@ describe('ZBLL options check', () => {
     const zbll = skrambler.get({ category: 'ZBLL' });
 
     const isZBLL = ZBLL.some((alg) => {
-      return alg.values.some((value) => simplifyScramble(reverseScramble(value)) === zbll);
+      return alg.values.some((value) => {
+        if (value === zbll) {
+          return true;
+        }
+
+        for (const count of [1, 2, 3]) {
+          if (rotateScramble(value, 'y', count) === zbll) {
+            return true;
+          }
+        }
+      });
     });
 
     expect(isZBLL).toBe(true);

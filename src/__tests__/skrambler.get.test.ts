@@ -34,7 +34,7 @@ describe('ZBLL options check', () => {
         }
 
         for (const count of [1, 2, 3]) {
-          if (reverseScramble(rotateScramble(value, 'y', count)) === zbll) {
+          if (simplifyScramble(reverseScramble(rotateScramble(value, 'y', count))) === zbll) {
             return true;
           }
         }

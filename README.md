@@ -42,4 +42,19 @@ Note: Right now only U ZBLL are available, more coming later
 
 ### Options
 
-More options are coming later, allowing to select specific cases, specific rotations etc.
+#### Angle
+
+You can force a scramble angle, mainly useful for things like ZBLL, OLL, PLL, where you want to train your recognition from every side
+This option is ignored for WCA scrambles
+
+```
+import skrambler from "kube-skrambler";
+
+// Returns a ZBLL scramble with fixed no angle
+const scramble = skrambler.get({ category: 'ZBLL', angle: 'none' }))
+
+// Returns a ZBLL scramble with fixed y2 angle
+const scramble = skrambler.get({ category: 'ZBLL', angle: 'y2' }))
+```
+
+More options are coming later, allowing to select specific cases.

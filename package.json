@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/TCM-dev/kube-skrambler#readme",
   "devDependencies": {
+    "@bedard/twister": "*",
     "@types/jest": "^26.0.24",
     "jest": "^27.0.6",
     "prettier": "^2.3.2",

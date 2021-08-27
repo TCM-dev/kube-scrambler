@@ -46,6 +46,7 @@ describe('ZBLL options check', () => {
 
   test('get method Angle option works', () => {
     // Force ZBLL case, would prefer being able to "mock" which alg is returned
+    // Instead, when possible, get a specific family, and check the angle with the same test present in algorithm.test.ts
     jest.spyOn(global.Math, 'random').mockReturnValue(0.5);
 
     const original = skrambler.get({ category: 'ZBLL', angle: 'none' });

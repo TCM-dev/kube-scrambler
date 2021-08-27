@@ -49,16 +49,16 @@ describe('ZBLL options check', () => {
     jest.spyOn(global.Math, 'random').mockReturnValue(0.5);
 
     const original = skrambler.get({ category: 'ZBLL', angle: 'none' });
-    expect(original).toBe("R2 D B2 U B2 R D R' U' R D' R' D' R2");
+    expect(original).toBe("B F' U' L2 U2 B2 D' B U' B2 D B2 F");
 
     const scrambleY = skrambler.get({ category: 'ZBLL', angle: 'y' });
-    expect(scrambleY).toBe("F2 D R2 U R2 F D F' U' F D' F' D' F2");
+    expect(scrambleY).toBe("R L' U' B2 U2 R2 D' R U' R2 D R2 L");
 
     const scrambleY2 = skrambler.get({ category: 'ZBLL', angle: 'y2' });
-    expect(scrambleY2).toBe("L2 D F2 U F2 L D L' U' L D' L' D' L2");
+    expect(scrambleY2).toBe("F B' U' R2 U2 F2 D' F U' F2 D F2 B");
 
     const scrambleYPrime = skrambler.get({ category: 'ZBLL', angle: "y'" });
-    expect(scrambleYPrime).toBe("B2 D L2 U L2 B D B' U' B D' B' D' B2");
+    expect(scrambleYPrime).toBe("L R' U' F2 U2 L2 D' L U' L2 D L2 R");
 
     jest.spyOn(global.Math, 'random').mockRestore();
   });
